@@ -29,6 +29,8 @@ async function main() {
         return
     }
 
+    const podspec_path = `${process.env.GITHUB_WORKSPACE}/${podspec_path}/${podspec}`
+
     await exec.exec('gem install cocoapods')
     await exec.exec('gem install fastlane')
 
@@ -36,10 +38,10 @@ async function main() {
     await exec.exec(`pod repo add ${spec_repo_name} https://oauth2:${spec_repo_token}@github.com/${spec_owner}/${spec_repo_name}.git`)
 
     // change version in spec file
-    await exec.exec(`fastlane run version_bump_podspec path:${podspec} version_number:${pod_version}`)
+    await exec.exec(`fastlane run version_bump_podspec path:${podspec_path} version_number:${pod_version}`)
 
     // pod repo push
-    await exec.exec(`pod repo push ${spec_repo_name} ${process.env.GITHUB_WORKSPACE}/${podspec_path}/${podspec} ${args}`)
+    await exec.exec(`pod repo push ${spec_repo_name} ${podspec_path} ${args}`)
 }
 
 
