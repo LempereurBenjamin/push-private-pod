@@ -39,7 +39,7 @@ async function main() {
     await exec.exec(`fastlane run version_bump_podspec path:${podspec} version_number:${pod_version}`)
 
     // pod repo push
-    await exec.exec(`pod repo push ${spec_repo_name} ${podspec} ${args}`)
+    await exec.exec(`pod repo push ${spec_repo_name} ${process.env.GITHUB_WORKSPACE}/${podspec_path}/${podspec} ${args}`)
 }
 
 
