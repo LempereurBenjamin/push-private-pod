@@ -9,10 +9,11 @@ async function main() {
     const spec_repo_token = core.getInput('repo-token')
     const spec_repo_name = core.getInput('repo-name')
     const pod_version = core.getInput('pod-version')
+    const podspec_path = core.getInput('podspec-path')
     const args = core.getInput('push-args')
-
+    
     function findSpec() {
-        const files = fs.readdirSync(process.env.GITHUB_WORKSPACE)
+        const files = fs.readdirSync(`${process.env.GITHUB_WORKSPACE}/${podspec_path}`)
     
         for (var i in files) {
             if (path.extname(files[i]) === ".podspec") {

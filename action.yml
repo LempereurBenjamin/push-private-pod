@@ -14,6 +14,10 @@ inputs:
     pod-version:
         description: 'Pod version.'
         required: true
+    podspec-path:
+        description: 'Podspec relative path from Github Workspace.'
+        required: false
+        default: ''
     push-args:
         description: 'Lint arguments'
         required: false

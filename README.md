@@ -18,6 +18,10 @@ Push to private CocoaPods repository.
 
 Lint arguments. Default ''.
 
+## `podspec-path`
+
+Podspec relative path from Github Workspace. Default ''.
+
 ## Outputs
 
 None
@@ -29,3 +33,4 @@ with:
   repo-url: 'https://https://github.com/LempereurBenjamin/push-private-pod.git'
   repo-name: PushRepo
   version: 1.1
+  podspec-path: generated/project
