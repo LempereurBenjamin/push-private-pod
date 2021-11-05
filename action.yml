@@ -1,0 +1,23 @@
+name: 'Push private pods'
+description: 'Push to private CocoaPods repository.'
+author: 'Benjamin Lempereur'
+inputs:
+    repo-owner:
+        description: 'Private repo owner.'
+        required: true
+    repo-name:
+        description: 'Private repo name.'
+        required: true
+    repo-token:
+        description: 'Private repo token.'
+        required: true
+    pod-version:
+        description: 'Pod version.'
+        required: true
+    push-args:
+        description: 'Lint arguments'
+        required: false
+        default: ''
+runs:
+    using: 'node12'
+    main: 'index.js'
