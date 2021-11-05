@@ -33,7 +33,7 @@ async function main() {
     await exec.exec('gem install fastlane')
 
     // add spec repo
-    await exec.exec(`pod repo add ${spec_repo_name} https://${spec_repo_token}@github.com/${spec_owner}/${spec_repo_name}.git`)
+    await exec.exec(`pod repo add ${spec_repo_name} https://oauth2:${spec_repo_token}@github.com/${spec_owner}/${spec_repo_name}.git`)
 
     // change version in spec file
     await exec.exec(`fastlane run version_bump_podspec path:${podspec} version_number:${pod_version}`)
