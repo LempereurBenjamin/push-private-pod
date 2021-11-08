@@ -32,5 +32,5 @@ uses: LempereurBenjamin/push-private-pod@v1.0
 with:
   repo-url: 'https://https://github.com/LempereurBenjamin/push-private-pod.git'
   repo-name: PushRepo
-  version: 1.1
+  pod-version: 1.1
   podspec-path: generated/project
