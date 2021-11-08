@@ -34,10 +34,6 @@ async function main() {
     await exec.exec('gem install cocoapods')
     await exec.exec('gem install fastlane')
 
-    await exec.exec(`git clone https://oauth2:${spec_repo_token}@github.com/${spec_owner}/${spec_repo_name}.git`)
-    await exec.exec(`git tag ${pod_version}`)
-    await exec.exec('git push --tags')
-
     // add spec repo
     await exec.exec(`pod repo add ${spec_repo_name} https://oauth2:${spec_repo_token}@github.com/${spec_owner}/${spec_repo_name}.git`)
 
